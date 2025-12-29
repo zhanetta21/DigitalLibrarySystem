@@ -2,14 +2,15 @@ public class Main {
   public static void main(String[] args) {
 
     Library library = new Library("City Library", 10);
-
-    Book b1 = new Book("1984", "George Orwell", "1111");
-    Book b2 = new Book("Harry Potter", "J.K. Rowling", "2222");
-    Book b3 = new Book("The Hobbit", "J.R.R. Tolkien", "3333");
+    Book b1 = new PrintedBook("1984", "George Orwell", "1");
+    Book b2 = new PrintedBook("Harry Potter", "J.K. Rowling", "2");
+    Book b3 = new EBook("The Hobbit", "J.R.R. Tolkien", "3");
+    Book b4 = new PrintedBook("ABC Murders", "Agatha Christie", "4");
 
     library.addBook(b1);
     library.addBook(b2);
     library.addBook(b3);
+    library.addBook(b4);
 
     LibraryUser u1 = new LibraryUser("Alice", 101);
     LibraryUser u2 = new LibraryUser("Bob", 102);

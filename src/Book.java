@@ -1,4 +1,4 @@
-public class Book {
+public  abstract class Book {
     private String title;
     private String author;
     private String isbn;
@@ -28,12 +28,26 @@ public class Book {
         }
         return false;
     }
-
-    // Метод — вернуть книгу
-    public void returnBook() {
-        borrowedBy = null;
+    public void returnBook(){
+        borrowedBy=null;
     }
-
+    public abstract String getType();
+    @Override
+    public String toString(){
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", status=" + (borrowedBy == null ? "Available" : "Taken by " + borrowedBy.getName()) +
+                '}';
+    }
+  @Override
+  public boolean equals(Object o) {
+      if (this == o) return true;
+      if (!(o instanceof Book)) return false;
+      Book book = (Book) o;
+      return isbn.equals(book.isbn);
+  }
     public void printInfo() {
         System.out.print("Book: " + title + " | " + author + " | ISBN: " + isbn);
         if (borrowedBy != null) {

@@ -58,6 +58,28 @@ public class Library {
         }
     }
 
+    public void sortByTitle() {
+        for (int i = 0; i < bookCount - 1; i++) {
+            for (int j = i + 1; j < bookCount; j++) {
+                if (books[i].getTitle().compareToIgnoreCase(books[j].getTitle()) > 0) {
+                    Book temp = books[i];
+                    books[i] = books[j];
+                    books[j] = temp;
+                }
+            }
+        }
+    }
+
+    public void printAvailableBooks() {
+        System.out.println("\nAvailable books:");
+        for (int i = 0; i < bookCount; i++) {
+            if (books[i].getBorrowedBy() == null) {
+                books[i].printInfo();
+            }
+        }
+    }
+
+
     public void printAllBooks() {
         System.out.println("\nBooks in library \"" + name + "\":");
         for (int i = 0; i < bookCount; i++) {
