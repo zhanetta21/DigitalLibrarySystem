@@ -78,8 +78,6 @@ public class Library {
             }
         }
     }
-
-
     public void printAllBooks() {
         System.out.println("\nBooks in library \"" + name + "\":");
         for (int i = 0; i < bookCount; i++) {
