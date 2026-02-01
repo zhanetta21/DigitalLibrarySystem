@@ -13,7 +13,6 @@ public class Library {
         if (bookCount < books.length) books[bookCount++] = b;
     }
 
-    // ТЕ САМЫЕ МЕТОДЫ, КОТОРЫХ НЕ ХВАТАЛО НА СКРИНШОТЕ:
     public void borrowBooks(String title, LibraryUser user) {
         for (int i = 0; i < bookCount; i++) {
             if (books[i].getTitle().equalsIgnoreCase(title) && books[i].getBorrowedBy() == null) {
@@ -33,7 +32,6 @@ public class Library {
             }
         }
     }
-
     public void printStats() {
         int taken = 0;
         for (int i = 0; i < bookCount; i++) if (books[i].getBorrowedBy() != null) taken++;

@@ -8,7 +8,6 @@ public class DBConnection {
     private static final String PASSWORD = "zhan_17";
 
     public static Connection getConnection() throws SQLException {
-        // Подгружаем драйвер (опционально для новых версий JDBC, но надежнее оставить)
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
