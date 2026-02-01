@@ -1,20 +1,23 @@
 public class LibraryUser {
     private String name;
-    private int userId;
+    private int id; // или userId
 
-    public LibraryUser(String name, int userId) {
+    public LibraryUser(String name, int id) {
         this.name = name;
-        this.userId = userId;
+        this.id = id;
     }
 
-    public String getName() { return name; }
-    public int getUserId() { return userId; }
+    public String getName() {
+        return name;
+    }
 
-    public void setName(String name) { this.name = name; }
-    public void setUserId(int userId) { this.userId = userId; }
+    // Добавляем именно тот метод, который ищет Java
+    public int getUserId() {
+        return id;
+    }
 
-    public void printInfo() {
-        System.out.println("User: " + name + " | ID: " + userId);
+    // На всякий случай добавим и такой вариант, если где-то используется он
+    public int getId() {
+        return id;
     }
 }
-
